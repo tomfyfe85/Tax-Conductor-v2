@@ -4,26 +4,24 @@ import java.math.RoundingMode;
 
 
 public class Calculate {
-    float gross;
+    double gross;
 
-    public Calculate(float gross){
+    public Calculate(double gross){
         this.gross = gross;
     }
 
     private BigDecimal grossToBigDecimal(){
-        BigDecimal gross_amount;
-        gross_amount = new BigDecimal(this.gross);
-        return gross_amount;
+        return new BigDecimal(this.gross);
     }
 
     public BigDecimal tax(){
-        final float BASIC = .2F;
-        BigDecimal tax;
-        tax = grossToBigDecimal() * BASIC;
-        return tax;
+        final BigDecimal BASIC = new BigDecimal("0.20");
+
+        BigDecimal tax = grossToBigDecimal().multiply(BASIC);
+        return tax.setScale(2, RoundingMode.DOWN);
     }
 
-    public float net(){
-        return this.gross - tax();
-    }
+//    public float net(){
+//        return this.gross - tax();
+//    }
 }

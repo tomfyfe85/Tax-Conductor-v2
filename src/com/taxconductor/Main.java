@@ -8,8 +8,9 @@ public class Main {
 
         Calculate calculate = new Calculate(scanner.nextFloat());
 
-        System.out.printf("Tax: %f,\nNet profit: %f\n", calculate.tax(), calculate.net());
+        System.out.print("Tax: " + calculate.tax().toPlainString());
 
+//        System.out.printf("Tax: %f,\nNet profit: %f\n", calculate.tax(), calculate.net());
 //        TODO: round down tax and net - Calculate needs to use BigDecimal
 
 //
