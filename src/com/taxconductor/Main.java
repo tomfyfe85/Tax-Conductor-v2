@@ -1,5 +1,4 @@
 package com.taxconductor;
-
 import java.util.Scanner;
 
 public class Main {
@@ -7,16 +6,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter gross earnings: ");
 
-        final float BASIC = .2F;
+        Calculate calculate = new Calculate(scanner.nextFloat());
 
-        float gross = scanner.nextFloat();
-        float tax = gross * BASIC;
-        float net = gross - tax;
+        System.out.printf("Tax: %f,\nNet profit: %f\n", calculate.tax(), calculate.net());
 
-        System.out.printf("Tax: %f,\nNet profit: %f\n", tax, net);
+//        TODO: round down tax and net - Calculate needs to use BigDecimal
 
-//        TODO: round down tax and net
-//             abstract calculation to calculator class, get tax bracket
+//
+//             get tax bracket
 //             from the user as an argument. Add validation.
     }
 }
