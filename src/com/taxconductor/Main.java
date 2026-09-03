@@ -7,14 +7,17 @@ public class Main {
         System.out.print("Enter gross earnings: ");
 
         Calculate calculate = new Calculate(scanner.nextFloat());
+        String tax = calculate.tax().toPlainString();
+        String net = calculate.net().toPlainString();
 
-        System.out.print("Tax: " + calculate.tax().toPlainString());
-
-//        System.out.printf("Tax: %f,\nNet profit: %f\n", calculate.tax(), calculate.net());
-//        TODO: round down tax and net - Calculate needs to use BigDecimal
-
-//
-//             get tax bracket
-//             from the user as an argument. Add validation.
+        System.out.print("Tax: " + tax + ", Net profit: " + net);
     }
 }
+
+
+//        TODO:
+//        get tax bracket - use enum?
+//        Add some validation.
+//        Expenses
+//        AI expenses query feature
+//        Make interface for different tax years/tax codes ?
