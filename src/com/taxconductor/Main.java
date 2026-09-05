@@ -1,15 +1,17 @@
 package com.taxconductor;
 import java.util.Scanner;
+import java.math.BigDecimal;
 
 public class Main {
-    public static void main() {
+    static void main() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter gross earnings: ");
-        double gross = scanner.nextDouble();
-        System.out.print("Enter tax bracket, IE BASIC (20%), HIGHER_RATE (40%), or ADDITIONAL(45%): ");
-        String user_bracket = scanner.next();
+        BigDecimal gross = scanner.nextBigDecimal();
 
-        Calculate calculate = new Calculate(gross, user_bracket);
+        System.out.print("Enter tax bracket, IE BASIC (20%), HIGHER_RATE (40%), or ADDITIONAL(45%): ");
+        String userBracket = scanner.next();
+
+        Calculate calculate = new Calculate(gross, userBracket);
         String tax = calculate.tax().toPlainString();
         String net = calculate.net().toPlainString();
 
