@@ -2,17 +2,17 @@ package com.taxconductor;
 import java.math.BigDecimal;
 
 public enum TaxBracket {
-    BASIC(0.2f),
-    HIGHER_RATE(0.4f),
-    ADDITIONAL(0.45f);
+    BASIC(new BigDecimal("0.2")),
+    HIGHER_RATE(new BigDecimal("0.4")),
+    ADDITIONAL(new BigDecimal("0.45"));
 
-    private final float bracket;
+    private final BigDecimal bracket;
 
-    TaxBracket(float bracket){
+    TaxBracket(BigDecimal bracket){
         this.bracket = bracket;
     }
 
     public BigDecimal getBracket(){
-        return new BigDecimal(bracket);
+        return new BigDecimal(String.valueOf(this.bracket));
     }
 }

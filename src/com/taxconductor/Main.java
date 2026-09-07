@@ -21,7 +21,6 @@ public class Main {
 
 
 //        TODO:
-//        get tax bracket - use enum?
 //        Add some validation.
 //        Expenses
 //        AI expenses query feature
